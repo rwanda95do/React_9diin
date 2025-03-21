@@ -1,18 +1,20 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 
-import MainPage from "@pages/index"
-import AboutPage from "@pages/about"
+// 페이지 컴포넌트
+import MainPage from "@pages/index/index"
+import { RecoilRoot } from "recoil"
+
 
 function App() {
   return (
     <div>
-        <BrowserRouter>
-            <Routes>
-                <Route index path="/" element={<MainPage/>}></Route>
-                <Route index path="/about" element={<AboutPage/>}></Route>
-                <Route index path="/about/:id" element={<AboutPage/>}></Route>
-            </Routes>
-        </BrowserRouter>
+        <RecoilRoot>
+            <BrowserRouter>
+                <Routes>
+                    <Route index path="/" element={<MainPage/>}></Route>
+                </Routes>
+            </BrowserRouter>
+        </RecoilRoot>
     </div>
   )
 }
